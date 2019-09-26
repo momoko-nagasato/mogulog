@@ -1,24 +1,13 @@
-# README
+## What is mogulog application?
+Users can see recommended shops through this applications.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- show shop on the google map
 
-Things you may want to cover:
 
-* Ruby version
+## Design DB Scheme
 
-* System dependencies
 
-* Configuration
+## Development Environment
+Ruby 2.5.1 Rails 5.2.3
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Gem
