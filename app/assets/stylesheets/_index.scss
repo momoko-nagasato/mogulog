@@ -1,0 +1,87 @@
+@import "variable";
+ 
+.top-box {
+  border: $BaseOrange;
+  height: 100px;
+  width: 100%;
+  position:relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto
+  }
+}
+
+.center-container {
+  background-color: $BaseColor;
+  border-radius: 10px;
+}
+
+.main-box {
+  height: 520px;
+  width: 100%;
+  padding: 20px 20px 0px;
+  display: flex;
+  box-sizing: border-box;
+  &__left {
+    height: 500px;
+    width: 50%;
+    border-radius: 10px;
+
+  }
+}
+
+.main-box__right {
+  background-color: $BaseWhite;
+  height: 470px;
+  width: 50%;
+  margin-left: 15px;
+  padding: 15px;
+  overflow-y: scroll;
+  border-radius: 10px;
+
+}
+
+.contents {
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  li {
+    list-style: none;
+    margin: 20px;
+  }
+  &__name {
+    color: $ContentsColor;
+    font-size: 22px;
+    border-bottom: solid 1.5px;
+  }
+  &__details {
+    font-size: 15px;
+    color: $ContentsColor;
+    font-weight: bold; 
+    p {
+      color: $DetailColor;
+      font-weight: normal;
+      margin-top: 8px;
+    }
+  }
+}
+
+.spot-box {
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  padding: 20px;
+}
+.btn-flat-dashed-border {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: $DetailColor;
+  border: dashed 1px $DetailColor;
+  border-radius: 3px;
+  transition: .4s;
+}
+.btn-flat-dashed-border:hover {
+  border-style: dotted;
+  color: $BaseOrange;
+}
