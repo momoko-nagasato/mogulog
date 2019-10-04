@@ -3,6 +3,8 @@ Users can see recommended shops through this applications.
 
 - show shop on the google map
 
+- https://mogulog.herokuapp.com/
+
 
 ## Design DB Scheme
 
