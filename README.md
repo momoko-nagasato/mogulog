@@ -7,6 +7,16 @@ Users can see recommended shops through this applications.
 
 
 ## Design DB Scheme
+### Table 'Maps'
+|column  |type  |  |
+|---|---|---|
+|store_name|string|
+|genre|string|
+|address|string|
+|access|string|
+|comment|text|
+
+
 
 
 ## Development Environment
