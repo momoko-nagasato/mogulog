@@ -1,7 +1,7 @@
 ## What is mogulog application?
 Users can see recommended shops through this applications.
 
-- show shop on the google map
+- show good restaurants on the google map
 
 - https://mogulog.herokuapp.com/
 
