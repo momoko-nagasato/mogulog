@@ -1,4 +1,4 @@
-<header>
+<header class=site-header>
   <div class=top-box>
     <%= image_tag 'logo.png'%>
   </div>
@@ -7,17 +7,17 @@
 <div class=center-container>
   <div class=main-box>
     <div class=main-box__left id="map"></div>
-    <div class=main-box__right>
+    <%# <div class=main-box__right>
       <ul class=contents>
         <li class=contents__name>
-        ダオタイ渋谷肉屋横丁店(storename) のもぐろぐ
+        (storename) のもぐろぐ
         <li class=contents__details>
         ジャンル 
-          <p>タイ料理、居酒屋(genre)</p>
+          <p>(genre)</p>
         </li>
         <li class=contents__details>
         住所 
-          <p>東京都渋谷区宇田川町１３−８ ちとせ会館2F(address)</p>
+          <p>(address)</p>
         </li>
         <li class=contents__details>
         最寄り
@@ -25,15 +25,10 @@
         </li>
         <li class=contents__details>
         おすすめコメント <br>
-          <p>言わずと知れた肉横にある、タイ居酒屋です。居酒屋ということもあり、そんなに期待はしていなかったのですが、まいった！おいしい！！肉横全体がかなりうるさいので、騒ぎたいときに訪れてくださいね。居酒屋なので、お通しついてきちゃいます・・・！
-          ※ランチ営業はしていないのでお気をつけて！(comment)</p>
+          <p>(comment)</p>
         </li>
-        <li class=contents__details>
-        評価
-          <p>3.5(rank)</p>
-        </li>
-      </ul>
-    </div>
+      </ul> %>
+    <%# </div> %>
   </div>
   <div class=main-box__bottom>
     <ul class=spot-box>
@@ -44,18 +39,38 @@
 </div>
 
 <footer>
-
 </footer>
 
+<%= Gon::Base.render_data %>
+
 <script>
-  var map;
-  function shibuyaMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 35.658034, lng: 139.701636},
-      zoom: 16
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 16,
+         center: new google.maps.LatLng(35.659200,139.701636),
+         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-  }
+
+    var infowindow = new google.maps.InfoWindow;
+    var marker, i;
+
+    for (i = 0; i < gon.str.length; i++) {  
+        marker = new google.maps.Marker({
+             position: new google.maps.LatLng(gon.str[i]["latitude"], gon.str[i]["longitude"]),
+             map: map,
+             title: gon.str[i]["genre"]
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+             return function() {
+                 infowindow.setContent(gon.str[i]["store_name"]);
+                 infowindow.open(map, marker);
+             }
+        })(marker, i));
+    }
+}
 </script> 
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>&callback=shibuyaMap"
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>&callback=initMap"
 type="text/javascript"></script>
