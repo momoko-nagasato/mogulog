@@ -63,7 +63,7 @@ function initMap() {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
              return function() {
-                 infowindow.setContent(gon.str[i]["store_name"]);
+                 infowindow.setContent( gon.str[i]["store_name"]);
                  infowindow.open(map, marker);
              }
         })(marker, i));
