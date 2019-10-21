@@ -7,28 +7,6 @@
 <div class=center-container>
   <div class=main-box>
     <div class=main-box__left id="map"></div>
-    <%# <div class=main-box__right>
-      <ul class=contents>
-        <li class=contents__name>
-        (storename) のもぐろぐ
-        <li class=contents__details>
-        ジャンル 
-          <p>(genre)</p>
-        </li>
-        <li class=contents__details>
-        住所 
-          <p>(address)</p>
-        </li>
-        <li class=contents__details>
-        最寄り
-          <p>渋谷駅　ハチ公口から5分</p>
-        </li>
-        <li class=contents__details>
-        おすすめコメント <br>
-          <p>(comment)</p>
-        </li>
-      </ul> %>
-    <%# </div> %>
   </div>
   <div class=main-box__bottom>
     <ul class=spot-box>
@@ -63,7 +41,7 @@ function initMap() {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
              return function() {
-                 infowindow.setContent( gon.str[i]["store_name"]);
+                 infowindow.setContent(gon.str[i]["store_name"]+'住所：'+gon.str[i]["address"]+'ジャンル：' +gon.str[i]["genre"]+'<h2>おすすめポイント♫</h2>'+gon.str[i]["recommended"]);
                  infowindow.open(map, marker);
              }
         })(marker, i));
