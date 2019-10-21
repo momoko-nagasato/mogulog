@@ -1,27 +1,24 @@
 <%= form_for [@map] do |f| %>
 
 <div class="field">
-  <%= f.label :住所 %>
-  <%= f.text_field :address, size: "50x10" %>
-</div>
-
-<div class="field">
-  <%= f.label :緯度 %>
-  <%= f.text_field :latitude %>
-</div>
-
-<div class="field">
-  <%= f.label :経度 %>
-  <%= f.text_field :longitude %>
-</div>
-
-<div class="field">
   <%= f.label :お店のなまえ %>
   <%= f.text_field :store_name %>
 </div>
 <div class="field">
   <%= f.label :お店のジャンル %>
   <%= f.text_field :genre %>
+</div>
+<div class="field">
+  <%= f.label :住所 %>
+  <%= f.text_field :address, size: "50x10" %>
+</div>
+<div class="field">
+  <%= f.label :緯度 %>
+  <%= f.text_field :latitude %>
+</div>
+<div class="field">
+  <%= f.label :経度 %>
+  <%= f.text_field :longitude %>
 </div>
 <div class="field">
   <%= f.label :行き方 %>
